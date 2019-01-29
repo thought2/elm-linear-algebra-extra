@@ -1,6 +1,6 @@
 module Math.Vector2.Extra exposing (..)
 
-{-| Some convenient functions to work with 3D Vectors.
+{-| Some convenient functions to work with 2D Vectors.
 
 
 # Update
