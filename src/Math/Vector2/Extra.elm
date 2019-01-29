@@ -17,16 +17,10 @@ module Math.Vector2.Extra exposing (..)
 
 @docs toVec3, fromVec3
 
-
-# Random
-
-@docs random
-
 -}
 
 import Math.Vector2 as V2 exposing (..)
 import Math.Vector3 as V3 exposing (Vec3, vec3)
-import Random exposing (Generator)
 
 
 -- UPDATE
@@ -91,14 +85,3 @@ toVec3 v z =
 fromVec3 : Vec3 -> Vec2
 fromVec3 v =
     vec2 (V3.getX v) (V3.getY v)
-
-
-
--- RANDOM
-
-
-random : Float -> Float -> Generator Vec2
-random from to =
-    Random.map2 vec2
-        (Random.float from to)
-        (Random.float from to)
