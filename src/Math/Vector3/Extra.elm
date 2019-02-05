@@ -15,10 +15,11 @@ module Math.Vector3.Extra exposing (..)
 
 # Conversions
 
-@docs toVec2, fromVec2
+@docs toVec2, fromVec2, fromColor
 
 -}
 
+import Color exposing (Color)
 import Math.Vector2 as V2 exposing (Vec2, vec2)
 import Math.Vector3 as V3 exposing (..)
 
@@ -94,3 +95,17 @@ toVec2 v =
 fromVec2 : Vec2 -> Float -> Vec3
 fromVec2 v z =
     vec3 (V2.getX v) (V2.getY v) z
+
+
+{-| Create a 3D Vector from a Color
+-}
+fromColor : Color -> Vec3
+fromColor color =
+    let
+        { red, green, blue, alpha } =
+            Color.toRgb color
+    in
+    vec3
+        (toFloat red / 255)
+        (toFloat green / 255)
+        (toFloat blue / 255)
